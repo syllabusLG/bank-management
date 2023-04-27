@@ -3,13 +3,15 @@ package bank.management.bankbackend.entities;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name = "roles")
 public class Role {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(unique = true)
-    private String code;
+    @Enumerated(EnumType.STRING)
+    @Column(length = 20)
+    private ERole name;
     private String label;
 
     public Long getId() {
@@ -20,12 +22,12 @@ public class Role {
         this.id = id;
     }
 
-    public String getCode() {
-        return code;
+    public ERole getName() {
+        return name;
     }
 
-    public void setCode(String code) {
-        this.code = code;
+    public void setName(ERole name) {
+        this.name = name;
     }
 
     public String getLabel() {

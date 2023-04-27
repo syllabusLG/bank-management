@@ -1,6 +1,7 @@
 package bank.management.bankbackend.services;
 
 import bank.management.bankbackend.dao.RoleDao;
+import bank.management.bankbackend.entities.ERole;
 import bank.management.bankbackend.entities.Role;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -29,7 +30,8 @@ public class RoleServiceImpl implements IRoleService{
     }
 
     @Override
-    public Optional<Role> findByCode(String code) {
-        return roleDao.findByCode(code);
+    public Optional<Role> findByName(ERole name) {
+        return roleDao.findByName(name);
     }
+
 }

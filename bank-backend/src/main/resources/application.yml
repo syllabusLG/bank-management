@@ -10,3 +10,8 @@ spring:
     password:
     driver-class-name: com.mysql.cj.jdbc.Driver
   show-sql: true
+# App Properties
+bank-backend:
+  app:
+    jwtSecret: bankSecretKey
+    jwtExpirationMs: 86400000
